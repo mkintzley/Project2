@@ -3,14 +3,14 @@ import { LitElement, html, css } from 'lit-element';
 class PolarisChip extends LitElement {
   static get properties() {
     return {
-      timestamp: {type: String},
-      date: { type: String},
-      month: { type: String },
-      day: { type: String },
       link: { type: String},
       botdesc: { type: String},
       image: { type: String},
       title: { type: String},
+      timestamp: {type: String},
+      date: { type: String},
+      month: { type: String },
+      day: { type: String },
     };
   }
 
@@ -22,11 +22,10 @@ class PolarisChip extends LitElement {
       .card-container {
         display: inline-block;
         align-items: top;
+        text-align: left
         background-color: #fff;
-        max-width: 400px;
         width: 400px;
         height: 400px;
-        text-align: left;
         padding-left: 8px;
       }
 
@@ -36,11 +35,11 @@ class PolarisChip extends LitElement {
         width: 386px;
       }
       .images img:hover {
-        opacity: 0.7;
+        opacity: 0.8;
       }
       .mid-wrapper {
-        padding-top: 15px;
         display: flex;
+        padding-top: 15px;
         flex-direction: row;
       }
       .month-label .month{
@@ -48,10 +47,10 @@ class PolarisChip extends LitElement {
         background: #1E407C;
         border-radius: 0 0 2px 2px;
         color: #FFF;
+        text-transform: uppercase;
         font-size: 0.8em;
         font-weight: bold;
         line-height: 1.8;
-        text-transform: uppercase;
       }
       .day-label .day{
           background: #f7f7f7;
@@ -74,26 +73,26 @@ class PolarisChip extends LitElement {
         font-family: 'Roboto',sans-serif;
       }
           a { color: #1E407C}
-          a:visited { text-decoration: none; color:#1E407C; }
-          a:hover { text-decoration: none; color:#001E44; }
           a:focus { text-decoration: none; color:#001E44; }
           a:hover, a:active { text-decoration: none; color:#001E44 }
+          a:visited { text-decoration: none; color:#1E407C; }
+          a:hover { text-decoration: none; color:#001E44; }
 
           img { color: #1E407C}
-          img:visited { text-decoration: none; color:#1E407C; }
-          img:hover { text-decoration: none; color:#001E44; }
           img:focus { text-decoration: none; color:#001E44; }
           img:hover, a:active { text-decoration: none; color:#001E44 }
+          img:visited { text-decoration: none; color:#1E407C; }
+          img:hover { text-decoration: none; color:#001E44; }
       
       .title .desc:hover{
         color: #1E407C;
       }
       
       .top-title {
+        margin: 0 0 0 0;
         font-size: 1.5em;
         font-weight: 700;
         line-height: 3.6875rem;
-        margin: 0 0 0 0;
         padding-bottom: 0px;
         position: left;
         text-align: left;
@@ -120,15 +119,15 @@ class PolarisChip extends LitElement {
 
   constructor() {
     super();
+    this.image = '';
+    this.title = '';
+    this.link = " ";
+    this.timestamp = '';
     this.title = ''; 
     this.date = 'null';
     this.month = '';
     this.day = '';
     this.botdesc = '';
-    this.image = '';
-    this.title = '';
-    this.link = " ";
-    this.timestamp = '';
   }
 
   render() {
